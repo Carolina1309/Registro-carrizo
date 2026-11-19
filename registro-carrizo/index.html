@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Caro Carrizo</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- onload: al cargar la página revisa si ya hay una sesión iniciada -->
+<body onload="validacionRegistro()">
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <p class="logo">Caro Carrizo</p>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="principal">
+    <div class="contenedor registro">
+
+      <section class="registro__intro">
+        <p class="etiqueta">Bienvenida/o</p>
+        <h1 class="titulo">Creá tu cuenta</h1>
+        <p>Completá el formulario para registrarte. Vamos a validar tus datos y, si todo está bien, te llevamos a tu pantalla de bienvenida.</p>
+      </section>
+
+      <section class="tarjeta">
+        <h2 class="tarjeta__titulo">Formulario de registro</h2>
+
+        <!-- onsubmit: cuando se envía el formulario se ejecuta registro(event) -->
+        <!-- novalidate: desactiva la validación del navegador para que valide nuestro JavaScript -->
+        <form class="formulario" onsubmit="registro(event)" novalidate>
+
+          <div class="formulario__campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ej: Caro" autocomplete="name">
+          </div>
+
+          <div class="formulario__campo">
+            <label for="edad">Edad <span class="opcional">(opcional)</span></label>
+            <input type="number" id="edad" placeholder="Ej: 30" min="1">
+          </div>
+
+          <div class="formulario__campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+          </div>
+
+          <div class="formulario__campo">
+            <label for="contrasenia">Contraseña</label>
+            <input type="password" id="contrasenia" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+          </div>
+
+          <div class="formulario__campo">
+            <label for="confirmar-contrasenia">Confirmar contraseña</label>
+            <input type="password" id="confirmar-contrasenia" placeholder="Repetí tu contraseña" autocomplete="new-password">
+          </div>
+
+          <!-- Acá JavaScript escribe los mensajes de error o de éxito -->
+          <p id="mensaje" class="mensaje" role="alert"></p>
+
+          <button type="submit" class="boton">Registrarme</button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <p>© 2026 Silvina Carolina Carrizo — Entrega Final 2</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

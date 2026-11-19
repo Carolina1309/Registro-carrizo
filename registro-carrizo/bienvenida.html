@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenida | Caro Carrizo</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- onload: al cargar la página busca al usuario guardado y muestra sus datos -->
+<body onload="mostrarBienvenida()">
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado__contenido">
+      <p class="logo">Caro Carrizo</p>
+      <!-- onclick: al hacer clic se ejecuta cerrarSesion() -->
+      <button type="button" class="boton boton--claro" onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="principal">
+    <div class="contenedor">
+      <section class="tarjeta bienvenida">
+        <p class="etiqueta">Sesión iniciada</p>
+        <!-- JavaScript completa el nombre dentro del span -->
+        <h1 class="titulo">¡Hola, <span id="saludo-nombre">usuario</span>!</h1>
+        <p>Tu registro se completó con éxito. Estos son los datos de tu cuenta:</p>
+
+        <ul class="datos">
+          <li class="datos__item">
+            <span class="datos__etiqueta">Correo electrónico</span>
+            <span id="dato-email">—</span>
+          </li>
+          <li class="datos__item">
+            <span class="datos__etiqueta">Edad</span>
+            <span id="dato-edad">—</span>
+          </li>
+          <li class="datos__item">
+            <span class="datos__etiqueta">Fecha de registro</span>
+            <span id="dato-fecha">—</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <p>© 2026 Silvina Carolina Carrizo — Entrega Final 2</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
